@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import { SlSocialTwitter, SlSocialYoutube, SlSocialFacebook, SlSocialInstagram } from "react-icons/sl";
+import { SlSocialTwitter, SlSocialYoutube, SlSocialInstagram } from "react-icons/sl";
 
 const Footer = () => {
     return (
-        <footer className="footer items-center p-4 bg-neutral text-neutral-content">
+        <footer className="footer flex justify-around md:flex-row flex-col items-center p-4 bg-neutral text-neutral-content">
             <div className="items-center grid-flow-col ml-10">
                 <p>Copyright ©seantuck, 2022 - All right reserved</p>
             </div>
