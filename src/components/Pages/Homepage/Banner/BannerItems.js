@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BannerItems = ({ service }) => {
-    const { name, img, price, description } = service;
+    const { _id, name, img, price, description } = service;
 
     const lmao = description.split(' ').slice(0, 10).join(' ');
     console.log(lmao)
@@ -17,7 +18,7 @@ const BannerItems = ({ service }) => {
                 <div className='p-2 mb-2'>
                     <p><small>{description.split(' ').length > 30 ? description.split(' ').slice(0, 35).join(' ') + '...' : description}</small></p>
                 </div>
-                <button className="btn btn-xs btn-outline w-full border-0">View Details</button>
+                <Link to={`/services/${_id}`}><button className="btn btn-sm btn-outline w-full border-0">View Details</button></Link>
             </div>
         </div>
     );
