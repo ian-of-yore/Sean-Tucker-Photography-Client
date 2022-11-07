@@ -14,9 +14,10 @@ const BannerItems = ({ service }) => {
                     <h2 className="card-title">{name}</h2>
                     <p className='font-bold text-lg text-yellow-700'>${price}</p>
                 </div>
-                <div className='p-2'>
-                    <p><small>{description.split(' ').length > 30 ? description.split(' ').slice(0, 30).join(' ') + '...' : description}</small></p>
+                <div className='p-2 mb-2'>
+                    <p><small>{description.split(' ').length > 30 ? description.split(' ').slice(0, 35).join(' ') + '...' : description}</small></p>
                 </div>
+                <button className="btn btn-xs btn-outline w-full border-0">View Details</button>
             </div>
         </div>
     );
