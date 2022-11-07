@@ -1,15 +1,21 @@
 import React from 'react';
 
 const BannerItems = ({ service }) => {
-    const { name, img, price } = service;
+    const { name, img, price, description } = service;
+
+    const lmao = description.split(' ').slice(0, 10).join(' ');
+    console.log(lmao)
+
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
-            <figure><img src={img} alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">{name}</h2>
-                <p>${price}</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+        <div className='flex justify-center'>
+            <div className="card card-compact w-full bg-base-100 shadow-xl">
+                <figure><img src={img} alt="Shoes" style={{ height: "45vh" }} /></figure>
+                <div className="p-2 mt-3 flex justify-between items-center" style={{ height: "55px" }}>
+                    <h2 className="card-title">{name}</h2>
+                    <p className='font-bold text-lg text-yellow-700'>${price}</p>
+                </div>
+                <div className='p-2'>
+                    <p><small>{description.split(' ').length > 30 ? description.split(' ').slice(0, 30).join(' ') + '...' : description}</small></p>
                 </div>
             </div>
         </div>
