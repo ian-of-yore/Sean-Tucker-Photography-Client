@@ -1,12 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Review from './Review/Review';
-import { FaArrowRight } from "react-icons/fa";
 
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData();
     const { name, img, price, description, learners } = serviceDetails;
-    console.log(serviceDetails);
+
     return (
         <div className='mt-10 w-11/12 mx-auto'>
             <div className="card card-side bg-base-100 shadow-xl">
