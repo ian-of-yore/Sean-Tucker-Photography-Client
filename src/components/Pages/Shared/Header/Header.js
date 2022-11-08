@@ -37,11 +37,11 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <Link><button className='btn btn-ghost'>My Reviews</button></Link>
+                    <Link to='/addservice'><button className='btn btn-ghost'>Add Service</button></Link>
                     {
                         user?.email ?
                             <div>
-                                <Link><button className='btn btn-ghost'>My Reviews</button></Link>
-                                <Link><button className='btn btn-ghost'>Add Service</button></Link>
                                 <button onClick={handleUserLogOut} className='btn btn-ghost'>Sign Out</button>
                             </div>
                             :

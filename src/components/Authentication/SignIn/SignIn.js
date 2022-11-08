@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import signInImg from '../../../assets/SignIn.jfif'
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
@@ -10,6 +10,10 @@ const SignIn = () => {
     const { userLogIn, googleSignIn } = useContext(AuthContext);
     useTitle('Sign In');
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -19,6 +23,7 @@ const SignIn = () => {
             .then((result) => {
                 // console.log(result.user);
                 form.reset();
+                navigate(from, { replace: true })
             })
             .catch((err) => console.log(err))
     }
