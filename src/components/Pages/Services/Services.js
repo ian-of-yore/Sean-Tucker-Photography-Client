@@ -1,9 +1,12 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
+import useTitle from '../../../hooks/useTitle';
+
 
 const Services = () => {
     const services = useLoaderData();
+    useTitle('Services');
     return (
         <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 w-11/12 mx-auto'>
             {

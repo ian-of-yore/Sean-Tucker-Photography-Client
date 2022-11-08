@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import signInImg from '../../../assets/SignIn.jfif'
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
+
 
 const SignIn = () => {
     const { userLogIn, googleSignIn } = useContext(AuthContext);
+    useTitle('Sign In');
 
     const handleSubmit = (event) => {
         event.preventDefault();

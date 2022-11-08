@@ -3,10 +3,12 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import registerImg from '../../../assets/register.jfif'
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
 
     const { createUser, googleSignIn } = useContext(AuthContext);
+    useTitle('Sign Up');
 
     const handleSubmit = (event) => {
         event.preventDefault();

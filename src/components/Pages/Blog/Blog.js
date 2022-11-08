@@ -1,6 +1,9 @@
 import React from 'react';
+import useTitle from '../../../hooks/useTitle';
 
 const Blog = () => {
+    useTitle('Blog');
+
     return (
         <div className='w-1/2 mx-auto mt-10' style={{ height: "77.3vh" }}>
             <h3 className='my-5 text-3xl text-center font-semibold'>Here are some of the Frequently Asked Questions (FAQ) about the MERN stack web development</h3>
