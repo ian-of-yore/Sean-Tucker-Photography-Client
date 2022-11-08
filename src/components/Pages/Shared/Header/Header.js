@@ -26,7 +26,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <Link to='/' className="btn btn-ghost normal-case text-xl pl-2">
-                        <img src={logo} alt="" className='h-7 w-7 rounded-lg mr-2' />
+                        {/* <img src={logo} alt="" className='h-7 w-7 rounded-lg mr-2' /> */}
                         Sean Tucker
                     </Link>
                 </div>
