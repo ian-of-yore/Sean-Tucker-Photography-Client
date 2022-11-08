@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
-    const { _id, name, img, price, learners, description } = service;
+    const { _id, name, img, price, description } = service;
     return (
         <div className='flex justify-center'>
             <div className="card card-compact w-full bg-base-100 shadow-xl">

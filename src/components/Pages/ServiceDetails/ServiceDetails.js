@@ -1,26 +1,121 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../../hooks/useTitle';
-import Review from './Review/Review';
+import toast, { Toaster } from 'react-hot-toast';
+import ReviewCard from './ReviewCard';
+
 
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData();
+    const { user } = useContext(AuthContext);
+
     useTitle('Service Details')
-    const { name, img, price, description, learners } = serviceDetails;
+    const { _id, name, img, price, description, learners } = serviceDetails;
+
+    const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews/${_id}`)
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [_id])
+
+
+    const handleReviewSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const userName = form.userName.value;
+        const userPhoto = form.userPhoto.value;
+        const reviewDetails = form.reviewDetails.value;
+        const userEmail = form.userEmail.value;
+
+        const review = {
+            serviceId: _id,
+            userName,
+            userPhoto,
+            reviewDetails,
+            userEmail
+        }
+
+        fetch('http://localhost:5000/reviews', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                if (data.acknowledged) {
+                    toast.success("Service Added Successfully!", {
+                        duration: 1000
+                    })
+                }
+                form.reset();
+            })
+            .catch((err) => console.log(err))
+    }
 
     return (
-        <div className='mt-10 w-11/12 mx-auto'>
-            <div className="card card-side bg-base-100 shadow-xl">
-                <figure><img src={img} alt="Movie" style={{ width: "60vw", height: "70vh" }} /></figure>
-                <div className="card-body" style={{ width: "40vw" }}>
-                    <h2 className="card-title text-3xl">{name}</h2>
-                    <p>{description}</p>
-                    <div className="card-actions justify-end">
-                        <button className="bg-gray-800 text-white px-5 py-3 rounded-xl hover:bg-gray-900">Join <span className='text-yellow-500'>{learners}</span> Aspiring Photographers today! for <span className='text-orange-600'>${price}</span></button>
+        <div>
+            {/* The following code is for toaster styling */}
+            <div>
+                <Toaster
+                    toastOptions={{
+                        success: {
+                            style: {
+                                background: 'green',
+                                color: 'white',
+                            },
+                        }
+                    }}
+                />
+            </div>
+
+            {/* This following code is for service details section*/}
+            <div className='mt-10 w-11/12 mx-auto'>
+                <div className="card card-side bg-base-100 shadow-xl">
+                    <figure><img src={img} alt="Movie" style={{ width: "60vw", height: "70vh" }} /></figure>
+                    <div className="card-body" style={{ width: "40vw" }}>
+                        <h2 className="card-title text-3xl">{name}</h2>
+                        <p>{description}</p>
+                        <div className="card-actions justify-end">
+                            <button className="bg-gray-800 text-white px-5 py-3 rounded-xl hover:bg-gray-900">Join <span className='text-yellow-500'>{learners}</span> Aspiring Photographers today! for <span className='text-orange-600'>${price}</span></button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <Review></Review>
+
+            {/* The Following code is for the review section */}
+            <div className='my-20 grid grid-cols-6 w-11/12 mx-auto'>
+                <div className='col-span-4 pr-10'>
+                    {
+                        reviews.map(review => <ReviewCard
+                            key={review._id}
+                            review={review}
+                        ></ReviewCard>)
+                    }
+                </div>
+
+                <div className='text-center font-bold text-2xl col-span-2 shadow-xl p-3'>
+                    {
+                        user?.email ?
+                            <form onSubmit={handleReviewSubmit} className='w-full'>
+                                <h3 className='text-3xl font-semibold text-center mb-3'>Add a Review</h3>
+                                <div>
+                                    <input type="text" name='userName' placeholder="User Name" className="input w-full" required />
+                                    <input type="text" name='userPhoto' placeholder="User PhotoURL" className="input w-full my-3" required />
+                                    <input type="email" name='userEmail' placeholder="User Email" className="input w-full mb-3" required />
+                                </div>
+                                <textarea name='reviewDetails' className="textarea h-12 border w-full border-black block my-4" placeholder="Add Your Review" required></textarea>
+                                <input type="submit" className='btn btn-outline btn-sm border-0 w-full' value="Submit Review" />
+                            </form>
+                            :
+                            <Link to='/signin'><button className='btn'>Log In to Add Review</button></Link>
+                    }
+                </div>
+            </div>
         </div>
     );
 };
