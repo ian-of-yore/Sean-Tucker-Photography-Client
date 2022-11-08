@@ -15,7 +15,7 @@ const ServiceDetails = () => {
                     <h2 className="card-title text-3xl">{name}</h2>
                     <p>{description}</p>
                     <div className="card-actions justify-end">
-                        <button className="bg-gray-800 text-white p-3 hover:bg-gray-900">Join <span className='text-yellow-500'>{learners}</span> Aspiring Photographers today! for <span className='text-orange-600'>${price}</span></button>
+                        <button className="bg-gray-800 text-white px-5 py-3 rounded-xl hover:bg-gray-900">Join <span className='text-yellow-500'>{learners}</span> Aspiring Photographers today! for <span className='text-orange-600'>${price}</span></button>
                     </div>
                 </div>
             </div>
