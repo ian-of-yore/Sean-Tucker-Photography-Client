@@ -14,7 +14,7 @@ const SignIn = () => {
         const password = form.password.value;
         userLogIn(email, password)
             .then((result) => {
-                console.log(result.user);
+                // console.log(result.user);
                 form.reset();
             })
             .catch((err) => console.log(err))
