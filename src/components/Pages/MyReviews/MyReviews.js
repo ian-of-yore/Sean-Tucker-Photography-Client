@@ -36,6 +36,38 @@ const MyReviews = () => {
         }
     }
 
+    const handleUpdateReview = (reviewId, event) => {
+        event.preventDefault();
+        const form = event.target;
+        const updatedReview = form.reviewDetails.value;
+
+        const review = {
+            updatedReview
+        }
+
+        fetch(`http://localhost:5000/reviews/${reviewId}`, {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success("Review Updated!", {
+                        duration: 1000
+                    })
+                    const remaining = myReviews.filter(myReview => myReview._id !== reviewId);
+                    const selected = myReviews.find(myReview => myReview._id === reviewId);
+                    selected.reviewDetails = JSON.stringify(updatedReview);
+                    const newReviews = [...remaining, selected];
+                    setMyReviews(newReviews);
+                }
+            })
+
+    }
+
 
     return (
         <div style={{ minHeight: "77.8vh" }}>
@@ -65,6 +97,7 @@ const MyReviews = () => {
                         key={myReview._id}
                         myReview={myReview}
                         handleDeleteReview={handleDeleteReview}
+                        handleUpdateReview={handleUpdateReview}
                     ></MyReviewsCard>)
                 }
             </div>

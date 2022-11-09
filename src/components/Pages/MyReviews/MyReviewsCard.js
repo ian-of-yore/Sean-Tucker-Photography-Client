@@ -3,9 +3,9 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { RiDeleteBin3Line } from "react-icons/ri";
 import { GrDocumentUpdate } from "react-icons/gr";
 
-const MyReviewsCard = ({ myReview, handleDeleteReview }) => {
+const MyReviewsCard = ({ myReview, handleDeleteReview, handleUpdateReview }) => {
     const { user } = useContext(AuthContext);
-    const { _id, userName, userPhoto, serviceId, reviewDetails } = myReview;
+    const { _id, userName, serviceId, reviewDetails } = myReview;
     const [myReviewService, setMyReviewService] = useState([]);
     const { name, img } = myReviewService;
 
@@ -30,13 +30,20 @@ const MyReviewsCard = ({ myReview, handleDeleteReview }) => {
                             <button className='pb-1'><label htmlFor="my-modal"><GrDocumentUpdate className='h-6 w-6 mr-2 mt-1'></GrDocumentUpdate></label></button>
                             <input type="checkbox" id="my-modal" className="modal-toggle" />
                             <div className="modal">
-                                <div className="modal-box">
-                                    <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
-                                    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+
+                                <form onSubmit={(event) => handleUpdateReview(_id, event)} className='w-1/3 mx-auto shadow-xl bg-gray-600 p-8'>
+                                    <h3 className='text-3xl font-semibold text-center mb-7 text-white'>Update Review</h3>
+                                    {/* <div>
+                                        <input type="text" name='userName' placeholder="User Name" className="input w-full" required />
+                                        <input type="text" name='userPhoto' placeholder="User PhotoURL" className="input w-full my-3" required />
+                                        <input type="email" name='userEmail' placeholder="User Email" defaultValue={user?.email} readOnly className="input w-full mb-3" required />
+                                    </div> */}
+                                    <textarea name='reviewDetails' className="textarea h-36 border w-full border-black block my-4" placeholder="Update your review" required></textarea>
                                     <div className="modal-action">
-                                        <label htmlFor="my-modal" className="btn">Yay!</label>
+                                        <button type="submit"><label htmlFor="my-modal" className="btn btn-ghost text-white">Update</label></button>
                                     </div>
-                                </div>
+                                </form>
+
                             </div>
                             <button onClick={() => handleDeleteReview(_id)}><RiDeleteBin3Line className='h-8 w-7'></RiDeleteBin3Line></button>
                         </div>
