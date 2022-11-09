@@ -51,7 +51,14 @@ const MyReviews = () => {
                     }}
                 />
             </div>
-            <h3 className='text-3xl text-center font-semibold my-10'>{user?.email} has {myReviews.length} reviews</h3>
+            <div>
+                {
+                    myReviews.length >= 0 ?
+                        <h3 className='text-3xl text-center font-semibold my-10'>You have {myReviews.length} reviews</h3>
+                        :
+                        <h3 className='text-3xl text-center font-semibold my-10'>You have no reviews</h3>
+                }
+            </div>
             <div>
                 {
                     myReviews.map(myReview => <MyReviewsCard
