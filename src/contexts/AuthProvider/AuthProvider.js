@@ -30,6 +30,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const userLogOut = () => {
+        localStorage.removeItem('seanTucker-token');
         return signOut(auth);
     }
 
