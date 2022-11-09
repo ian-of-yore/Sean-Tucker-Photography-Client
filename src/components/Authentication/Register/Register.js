@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import { setAuthToken } from '../../../api/authJWT';
 import registerImg from '../../../assets/register.jfif'
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../../hooks/useTitle';
@@ -18,8 +19,9 @@ const Register = () => {
         const password = form.password.value;
         createUser(email, password)
             .then((result) => {
-                // console.log(result.user);
                 form.reset();
+                const user = result.user;
+                setAuthToken(user);
             })
             .catch((err) => console.log(err))
     }
@@ -27,7 +29,8 @@ const Register = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
-                console.log(result.user)
+                const user = result.user;
+                setAuthToken(user);
             })
             .catch((err) => console.log(err))
     }

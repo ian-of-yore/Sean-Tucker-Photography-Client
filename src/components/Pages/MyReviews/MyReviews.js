@@ -11,7 +11,7 @@ const MyReviews = () => {
     useTitle('My Reviews');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+        fetch(`https://sean-tucker-server.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 "authorization": `Bearer ${localStorage.getItem("seanTucker-token")}`
             }
@@ -31,7 +31,7 @@ const MyReviews = () => {
     const handleDeleteReview = (reviewId) => {
         const confirm = window.confirm("Delete this review?");
         if (confirm) {
-            fetch(`http://localhost:5000/reviews/${reviewId}`, {
+            fetch(`https://sean-tucker-server.vercel.app/reviews/${reviewId}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -57,7 +57,7 @@ const MyReviews = () => {
             updatedReview
         }
 
-        fetch(`http://localhost:5000/reviews/${reviewId}`, {
+        fetch(`https://sean-tucker-server.vercel.app/reviews/${reviewId}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Banner = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/')
+        fetch('https://sean-tucker-server.vercel.app/')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

@@ -4,6 +4,7 @@ import signInImg from '../../../assets/SignIn.jfif'
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../../hooks/useTitle';
+import { setAuthToken } from '../../../api/authJWT';
 
 
 const SignIn = () => {
@@ -22,23 +23,9 @@ const SignIn = () => {
         userLogIn(email, password)
             .then((result) => {
                 form.reset();
-
-                const currentUser = {
-                    email: result.user.email
-                }
-                // get jwt token
-                fetch('http://localhost:5000/jwt', {
-                    method: "POST",
-                    headers: {
-                        "content-type": "application/json"
-                    },
-                    body: JSON.stringify(currentUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        localStorage.setItem("seanTucker-token", data.token);
-                        navigate(from, { replace: true })
-                    })
+                const user = result.user;
+                setAuthToken(user);
+                navigate(from, { replace: true })
             })
             .catch((err) => console.log(err))
     }
@@ -47,7 +34,8 @@ const SignIn = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
-                console.log(result.user)
+                const user = result.user;
+                setAuthToken(user);
             })
             .catch((err) => console.log(err))
     }

@@ -24,12 +24,12 @@ export const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: async () => fetch('http://localhost:5000/services')
+                loader: async () => fetch('https://sean-tucker-server.vercel.app/services')
             },
             {
                 path: '/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: async ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: async ({ params }) => fetch(`https://sean-tucker-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/signin',
