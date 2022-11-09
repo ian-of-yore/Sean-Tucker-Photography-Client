@@ -27,20 +27,15 @@ const MyReviewsCard = ({ myReview, handleDeleteReview, handleUpdateReview }) => 
                             <h2 className="text-2xl font-semibold pr-5">Review of: <span className='text-yellow-800'>{name}</span></h2>
                         </div>
                         <div className='flex pt-1'>
-                            <button className='pb-1'><label htmlFor="my-modal"><GrDocumentUpdate className='h-6 w-6 mr-2 mt-1'></GrDocumentUpdate></label></button>
-                            <input type="checkbox" id="my-modal" className="modal-toggle" />
+                            <button className='pb-1'><label htmlFor={_id}><GrDocumentUpdate className='h-6 w-6 mr-2 mt-1'></GrDocumentUpdate></label></button>
+                            <input type="checkbox" id={_id} className="modal-toggle" />
                             <div className="modal">
 
-                                <form onSubmit={(event) => handleUpdateReview(_id, event)} className='w-1/3 mx-auto shadow-xl bg-gray-600 p-8'>
+                                <form onSubmit={(event) => handleUpdateReview(event, _id)} className='w-1/3 mx-auto shadow-xl bg-gray-600 p-8'>
                                     <h3 className='text-3xl font-semibold text-center mb-7 text-white'>Update Review</h3>
-                                    {/* <div>
-                                        <input type="text" name='userName' placeholder="User Name" className="input w-full" required />
-                                        <input type="text" name='userPhoto' placeholder="User PhotoURL" className="input w-full my-3" required />
-                                        <input type="email" name='userEmail' placeholder="User Email" defaultValue={user?.email} readOnly className="input w-full mb-3" required />
-                                    </div> */}
                                     <textarea name='reviewDetails' className="textarea h-36 border w-full border-black block my-4" placeholder="Update your review" required></textarea>
                                     <div className="modal-action">
-                                        <button type="submit"><label htmlFor="my-modal" className="btn btn-ghost text-white">Update</label></button>
+                                        <button type="submit"><label htmlFor={_id} className="btn btn-ghost text-white">Update</label></button>
                                     </div>
                                 </form>
 

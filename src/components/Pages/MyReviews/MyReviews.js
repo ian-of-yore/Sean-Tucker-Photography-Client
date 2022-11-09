@@ -36,7 +36,8 @@ const MyReviews = () => {
         }
     }
 
-    const handleUpdateReview = (reviewId, event) => {
+    const handleUpdateReview = (event, reviewId) => {
+
         event.preventDefault();
         const form = event.target;
         const updatedReview = form.reviewDetails.value;
@@ -61,7 +62,7 @@ const MyReviews = () => {
                     const remaining = myReviews.filter(myReview => myReview._id !== reviewId);
                     const selected = myReviews.find(myReview => myReview._id === reviewId);
                     selected.reviewDetails = JSON.stringify(updatedReview);
-                    const newReviews = [...remaining, selected];
+                    const newReviews = [selected, ...remaining];
                     setMyReviews(newReviews);
                 }
             })
