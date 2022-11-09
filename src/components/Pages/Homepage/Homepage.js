@@ -8,7 +8,7 @@ import Works from './Works/Works';
 const Homepage = () => {
     useTitle('Home');
     return (
-        <div>
+        <div className='mb-10'>
             <Banner></Banner>
             <About></About>
             <Works></Works>
