@@ -37,7 +37,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link><button className='btn btn-ghost'>My Reviews</button></Link>
+                    <Link to='/myreviews'><button className='btn btn-ghost'>My Reviews</button></Link>
                     <Link to='/addservice'><button className='btn btn-ghost'>Add Service</button></Link>
                     {
                         user?.email ?

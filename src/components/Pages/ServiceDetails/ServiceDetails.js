@@ -51,6 +51,8 @@ const ServiceDetails = () => {
                     toast.success("Service Added Successfully!", {
                         duration: 1000
                     })
+                    const newReviews = [...reviews, review];
+                    setReviews(newReviews);
                 }
                 form.reset();
             })
@@ -98,7 +100,7 @@ const ServiceDetails = () => {
                     }
                 </div>
 
-                <div className='text-center font-bold text-2xl col-span-2 shadow-xl p-3'>
+                <div className='text-center  col-span-2 shadow-xl p-3'>
                     {
                         user?.email ?
                             <form onSubmit={handleReviewSubmit} className='w-full'>
@@ -106,7 +108,7 @@ const ServiceDetails = () => {
                                 <div>
                                     <input type="text" name='userName' placeholder="User Name" className="input w-full" required />
                                     <input type="text" name='userPhoto' placeholder="User PhotoURL" className="input w-full my-3" required />
-                                    <input type="email" name='userEmail' placeholder="User Email" className="input w-full mb-3" required />
+                                    <input type="email" name='userEmail' placeholder="User Email" defaultValue={user?.email} readOnly className="input w-full mb-3" required />
                                 </div>
                                 <textarea name='reviewDetails' className="textarea h-12 border w-full border-black block my-4" placeholder="Add Your Review" required></textarea>
                                 <input type="submit" className='btn btn-outline btn-sm border-0 w-full' value="Submit Review" />
