@@ -5,17 +5,28 @@ import MyReviewsCard from './MyReviewsCard';
 import toast, { Toaster } from 'react-hot-toast';
 
 const MyReviews = () => {
-    const { user } = useContext(AuthContext);
+    const { user, userLogOut } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([]);
+    const [spinner, setSpinner] = useState(true);
     useTitle('My Reviews');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+            headers: {
+                "authorization": `Bearer ${localStorage.getItem("seanTucker-token")}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return userLogOut()
+                }
+                return res.json();
+            })
             .then(data => {
                 setMyReviews(data);
+                setSpinner(false);
             })
-    }, [user?.email])
+    }, [user?.email, userLogOut])
 
     const handleDeleteReview = (reviewId) => {
         const confirm = window.confirm("Delete this review?");
@@ -71,38 +82,46 @@ const MyReviews = () => {
 
 
     return (
-        <div style={{ minHeight: "77.8vh" }}>
-            <div>
-                <Toaster
-                    toastOptions={{
-                        success: {
-                            style: {
-                                background: 'green',
-                                color: 'white',
-                            },
-                        }
-                    }}
-                />
-            </div>
-            <div>
-                {
-                    myReviews.length >= 0 ?
-                        <h3 className='text-3xl text-center font-semibold my-10'>You have {myReviews.length} reviews</h3>
-                        :
-                        <h3 className='text-3xl text-center font-semibold my-10'>You have no reviews</h3>
-                }
-            </div>
-            <div>
-                {
-                    myReviews.map(myReview => <MyReviewsCard
-                        key={myReview._id}
-                        myReview={myReview}
-                        handleDeleteReview={handleDeleteReview}
-                        handleUpdateReview={handleUpdateReview}
-                    ></MyReviewsCard>)
-                }
-            </div>
+        <div>
+            {
+                spinner === true ?
+                    <button className="btn btn-square loading"></button>
+                    :
+                    <div style={{ minHeight: "77.8vh" }}>
+                        <div>
+                            <Toaster
+                                toastOptions={{
+                                    success: {
+                                        style: {
+                                            background: 'green',
+                                            color: 'white',
+                                        },
+                                    }
+                                }}
+                            />
+                        </div>
+                        <div className='mt-10'>
+                            {
+                                myReviews.length === 0 ?
+                                    <h3 className=' text-3xl font-semibold flex justify-center items-center' style={{ height: "77.3vh" }}>No reviews were added</h3>
+                                    :
+                                    <></>
+                            }
+                        </div>
+                        <div>
+                            {
+                                myReviews.map(myReview => <MyReviewsCard
+                                    key={myReview._id}
+                                    myReview={myReview}
+                                    handleDeleteReview={handleDeleteReview}
+                                    handleUpdateReview={handleUpdateReview}
+                                ></MyReviewsCard>)
+                            }
+                        </div>
+                    </div>
+            }
         </div>
+
     );
 };
 

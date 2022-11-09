@@ -21,9 +21,24 @@ const SignIn = () => {
         const password = form.password.value;
         userLogIn(email, password)
             .then((result) => {
-                // console.log(result.user);
                 form.reset();
-                navigate(from, { replace: true })
+
+                const currentUser = {
+                    email: result.user.email
+                }
+                // get jwt token
+                fetch('http://localhost:5000/jwt', {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem("seanTucker-token", data.token);
+                        navigate(from, { replace: true })
+                    })
             })
             .catch((err) => console.log(err))
     }
