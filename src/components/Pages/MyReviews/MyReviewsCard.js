@@ -14,6 +14,19 @@ const MyReviewsCard = ({ myReview }) => {
             .then(data => setMyReviewService(data))
     }, [serviceId])
 
+    const handleDeleteReview = (reviewId) => {
+        const confirm = window.confirm("Delete this review?");
+        if (confirm) {
+            fetch(`http://localhost:5000/reviews/${_id}`, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => {
+                    // const remaining = 
+                })
+        }
+    }
+
     return (
         <div>
             <div className="card card-side bg-base-100 shadow-xl w-10/12 mx-auto mb-5">
@@ -23,8 +36,8 @@ const MyReviewsCard = ({ myReview }) => {
                     <h2 className="font-semibold">email: {user?.email}</h2>
                     <p>Description: {reviewDetails}</p>
                     <div className="card-actions justify-between">
-                        <button className="btn btn-primary">Delete</button>
                         <button className="btn btn-primary">Update</button>
+                        <button onClick={() => handleDeleteReview(_id)} className="btn btn-primary">Delete</button>
                     </div>
                 </div>
                 <figure><img src={img} alt="Movie" /></figure>
