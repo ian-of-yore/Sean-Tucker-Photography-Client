@@ -42,7 +42,7 @@ const SignIn = () => {
 
 
     return (
-        <div className="hero bg-base-200" style={{ minHeight: "83vh" }}>
+        <div className="hero bg-base-200" style={{ minHeight: "83.7vh" }}>
             <div className="hero-content flex md:flex-row-reverse w-10/12 mx-auto">
 
                 <div className="w-1/3 ml-10">

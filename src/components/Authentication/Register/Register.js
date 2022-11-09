@@ -37,7 +37,7 @@ const Register = () => {
 
 
     return (
-        <div className="hero bg-base-200" style={{ minHeight: "83vh" }}>
+        <div className="hero bg-base-200" style={{ minHeight: "83.6vh" }}>
             <div className="hero-content flex md:flex-row w-10/12 mx-auto">
 
                 <div className="w-1/3 mr-10">

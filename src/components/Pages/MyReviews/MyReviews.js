@@ -85,9 +85,9 @@ const MyReviews = () => {
         <div>
             {
                 spinner === true ?
-                    <button className="btn btn-square loading"></button>
+                    <div className='flex justify-center items-center h-screen'><button className="btn btn-square loading"></button></div>
                     :
-                    <div style={{ minHeight: "77.8vh" }}>
+                    <div style={{ minHeight: "78.3vh" }}>
                         <div>
                             <Toaster
                                 toastOptions={{
