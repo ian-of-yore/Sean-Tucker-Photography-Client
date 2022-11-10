@@ -48,10 +48,10 @@ const ServiceDetails = () => {
             .then(data => {
                 // console.log(data)
                 if (data.acknowledged) {
-                    toast.success("Service Added Successfully!", {
+                    toast.success("Review Added Successfully!", {
                         duration: 1000
                     })
-                    const newReviews = [...reviews, review];
+                    const newReviews = [review, ...reviews];
                     setReviews(newReviews);
                 }
                 form.reset();
