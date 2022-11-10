@@ -60,13 +60,13 @@ const SignIn = () => {
                     <div className='flex justify-center items-center h-screen'><button className="btn loading">loading</button></div>
                     :
                     <div className="hero bg-base-200" style={{ minHeight: "83.7vh" }}>
-                        <div className="hero-content flex md:flex-row-reverse w-10/12 mx-auto">
+                        <div className="hero-content flex-col md:flex-row-reverse w-full md:w-10/12 md:mx-auto">
 
-                            <div className="w-1/3 ml-10">
+                            <div className="flex justify-center md:w-1/3 md:ml-10">
                                 <img src={signInImg} alt="" className='rounded-lg' style={{ height: "70vh", width: "60vw" }} />
                             </div>
 
-                            <div className="card flex-shrink-0 w-1/3 px-10 shadow-2xl bg-base-100 pt-16" style={{ height: "70vh" }}>
+                            <div className="card flex justify-center w-2/3 px-10 md:w-1/3 md:px-10 shadow-2xl bg-base-100 pt-16" style={{ height: "70vh" }}>
                                 <h3 className='text-center text-3xl font-semibold mt-4'>Sign In</h3>
                                 <form onSubmit={handleSubmit}>
                                     <div className="form-control">

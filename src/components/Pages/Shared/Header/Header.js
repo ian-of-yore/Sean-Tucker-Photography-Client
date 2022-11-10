@@ -21,7 +21,18 @@ const Header = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><Link to='/services'>Services</Link></li>
+                            <li><Link to='/services' className='btn btn-sm'>Services</Link></li>
+                            <li><Link to='/blog' className='btn btn-sm'>Blog</Link></li>
+                            {
+                                user?.email ?
+                                    <div>
+                                        <Link to='/myreviews'><button className='btn btn-sm w-full'>My Reviews</button></Link>
+                                        <Link to='/addservice'><button className='btn btn-sm w-full'>Add Service</button></Link>
+                                        <button onClick={handleUserLogOut} className='btn btn-sm w-full'>Sign Out</button>
+                                    </div>
+                                    :
+                                    <Link to='/signin' className='btn btn-sm w-full'>Sign In</Link>
+                            }
                         </ul>
                     </div>
                     <Link to='/' className="btn btn-ghost normal-case text-xl pl-4">
@@ -34,7 +45,7 @@ const Header = () => {
                         <li><Link to='/blog' className='font-semibold text-lg'>Blog</Link></li>
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end sm:hidden lg:flex lg:justify-end">
                     {
                         user?.email ?
                             <div>
