@@ -5,10 +5,12 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../../hooks/useTitle';
 import { setAuthToken } from '../../../api/authJWT';
+import { useState } from 'react';
 
 
 const SignIn = () => {
     const { userLogIn, googleSignIn, loading } = useContext(AuthContext);
+    const [spinner, setSpinner] = useState(true);
     useTitle('Sign In');
 
     const navigate = useNavigate();
@@ -25,9 +27,14 @@ const SignIn = () => {
                 form.reset();
                 const user = result.user;
                 setAuthToken(user);
+                setSpinner(false);
                 navigate(from, { replace: true })
             })
-            .catch((err) => console.log(err))
+            .catch((err) => {
+                setSpinner(false);
+                navigate('/signin');
+                console.log(err)
+            })
     }
 
 
@@ -38,14 +45,18 @@ const SignIn = () => {
                 setAuthToken(user);
                 navigate(from, { replace: true })
             })
-            .catch((err) => console.log(err))
+            .catch((err) => {
+                setSpinner(false);
+                navigate('/signin')
+                console.log(err)
+            })
     }
 
 
     return (
         <div>
             {
-                loading === true ?
+                loading === true && spinner === true ?
                     <div className='flex justify-center items-center h-screen'><button className="btn loading">loading</button></div>
                     :
                     <div className="hero bg-base-200" style={{ minHeight: "83.7vh" }}>

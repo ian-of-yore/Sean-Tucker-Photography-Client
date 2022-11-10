@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { setAuthToken } from '../../../api/authJWT';
@@ -9,6 +10,7 @@ import useTitle from '../../../hooks/useTitle';
 const Register = () => {
 
     const { createUser, googleSignIn, loading } = useContext(AuthContext);
+    const [spinner, setSpinner] = useState(true);
     useTitle('Sign Up');
 
     const navigate = useNavigate();
@@ -26,9 +28,14 @@ const Register = () => {
                 form.reset();
                 const user = result.user;
                 setAuthToken(user);
+                setSpinner(false);
                 navigate(from, { replace: true })
             })
-            .catch((err) => console.log(err))
+            .catch((err) => {
+                setSpinner(false);
+                navigate('/register')
+                console.log(err)
+            })
     }
 
     const handleGoogleSignIn = () => {
@@ -38,14 +45,18 @@ const Register = () => {
                 setAuthToken(user);
                 navigate(from, { replace: true })
             })
-            .catch((err) => console.log(err))
+            .catch((err) => {
+                setSpinner(false);
+                navigate('/register');
+                console.log(err)
+            })
     }
 
 
     return (
         <div>
             {
-                loading === true ?
+                loading === true && spinner === true ?
                     <div className='flex justify-center items-center h-screen'><button className="btn loading">loading</button></div>
                     :
                     <div className="hero bg-base-200" style={{ minHeight: "83.6vh" }}>

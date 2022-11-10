@@ -28,9 +28,9 @@ const Works = () => {
                     <img src={fox} alt="" style={{ height: "40vh" }} />
                 </div>
                 <div className='col-span-4'>
-                    <img src={street01} alt="" />
-                    <img src={street06} className='my-4' alt="" />
-                    <img src={street02} alt="" />
+                    <img src={street01} alt="" style={{ height: "36vh", width: "100%" }} />
+                    <img src={street06} className='my-4' alt="" style={{ height: "36vh", width: "100%" }} />
+                    <img src={street02} alt="" style={{ height: "36vh", width: "100%" }} />
                 </div>
             </div>
         </div>
