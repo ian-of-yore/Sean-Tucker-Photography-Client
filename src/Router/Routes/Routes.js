@@ -23,8 +23,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/services',
-                element: <Services></Services>,
-                loader: async () => fetch('https://sean-tucker-server.vercel.app/services')
+                element: <Services></Services>
             },
             {
                 path: '/services/:id',
