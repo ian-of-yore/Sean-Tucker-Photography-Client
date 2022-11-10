@@ -1,5 +1,5 @@
 # Sean Tucker Photography
-### We offer the ultimate resources to find the most authentic and unbiased resources to help you become the best photographer you are meant to be!.
+### We offer the ultimate resources to find the best courses based on the most authentic and unbiased reviews to help you become the best photographer you are meant to be!.
 ## Live Website: https://sean-tucker.web.app/
 
 ## Overview
