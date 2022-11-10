@@ -28,7 +28,7 @@ const Blog = () => {
                 </div>
                 <div className="collapse-content">
                     <p>
-                        JWT stands for "JOSN Web Token". It is widely used and alredy established itself as the web community
+                        JWT stands for "JSON Web Token". It is widely used and alredy established itself as the web community
                         standard to securely transmit information between parties as JSON object. Its main characteristics for its
                         fame is due to providing digitally signed token using a private and a public key pair by the identity provider.
                         The main purpose of using JWT is to ensure the authenticity of the data. A JWT consists of three parts, a Header,

@@ -13,7 +13,7 @@ const BannerItems = ({ service }) => {
                 <PhotoProvider>
                     <PhotoView src={img}>
                         <div>
-                            <img src={img} style={{ height: "45vh" }} alt="" />
+                            <img src={img} style={{ height: "45vh", width: "100%" }} alt="" />
                         </div>
                     </PhotoView>
                 </PhotoProvider>
