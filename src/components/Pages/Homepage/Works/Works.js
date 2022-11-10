@@ -18,14 +18,14 @@ const Works = () => {
                 <a href='https://www.seantucker.photography/documentaries' target="_blank" rel="noopener noreferrer" className='mr-7'>Documentaries</a>
                 <a href='https://www.seantucker.photography/philosophical' target="_blank" rel="noopener noreferrer">Philosophical</a>
             </div>
-            <div className='grid grid-cols-12 w-10/12 mx-auto gap-4'>
+            <div className='grid md:grid-cols-12 w-10/12 mx-auto gap-4'>
                 <div className='col-span-4'>
                     <img src={img06} className='mb-4' alt="" style={{ height: "40vh", width: "100%" }} />
                     <img src={street05} alt="" style={{ height: "70vh", width: "100%" }} />
                 </div>
                 <div className='col-span-4'>
                     <img src={street03} className='mb-4' alt="" style={{ height: "70vh", width: "100%" }} />
-                    <img src={fox} alt="" style={{ height: "40vh" }} />
+                    <img src={fox} alt="" style={{ height: "40vh", width: "100%" }} />
                 </div>
                 <div className='col-span-4'>
                     <img src={street01} alt="" style={{ height: "36vh", width: "100%" }} />

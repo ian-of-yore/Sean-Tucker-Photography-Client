@@ -3,11 +3,11 @@ import img from '../../../../assets/sean.jfif';
 
 const About = () => {
     return (
-        <div className='w-10/12 mx-auto grid grid-cols-10 shadow-xl my-20'>
+        <div className='sm:w-3/4 sm:mx-auto md:w-10/12 md:mx-auto md:grid md:grid-cols-10 shadow-xl my-20'>
             <div className='col-span-2'>
                 <img src={img} alt="" style={{ width: "90%", height: "40vh" }} />
             </div>
-            <div className='col-span-8 pt-3'>
+            <div className='col-span-8 pt-3 sm:p-4'>
                 <h3 className='text-3xl font-serif mb-1'>Sean is a Photographer, Filmmaker, Author and Speaker based in the UK.</h3>
                 <p className='pr-10 font-sans'>
                     He has a roboust career in his grasp. At a young age he worked with multiple reknowed NGO's across the African Continent
