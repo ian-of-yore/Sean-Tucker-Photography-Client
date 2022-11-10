@@ -6,6 +6,8 @@ const AddService = () => {
 
     useTitle('Add service');
 
+    // The follwoing code if for adding new services and sending the user provided data
+    // to the backend to store it in the mongodb
     const handleAddService = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -23,6 +25,7 @@ const AddService = () => {
             description
         }
 
+        // posting new service data to the mongoDB
         fetch('https://sean-tucker-server.vercel.app/services', {
             method: "POST",
             headers: {
@@ -45,6 +48,7 @@ const AddService = () => {
 
     return (
         <div style={{ height: "77.3vh" }}>
+            {/* The following code if for styling toast */}
             <div>
                 <Toaster
                     toastOptions={{

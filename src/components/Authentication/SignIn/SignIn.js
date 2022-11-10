@@ -17,6 +17,7 @@ const SignIn = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
+    // The following code if for handling email/password based log in system
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -37,7 +38,7 @@ const SignIn = () => {
             })
     }
 
-
+    // the following codes are handling google login
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {

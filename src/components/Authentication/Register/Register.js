@@ -17,6 +17,7 @@ const Register = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
+    // The following codes are for handling email/password based authentication system
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -38,6 +39,7 @@ const Register = () => {
             })
     }
 
+    // the following code is for handling social login, in this case it's for google
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {

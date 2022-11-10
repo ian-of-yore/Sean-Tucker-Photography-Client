@@ -9,7 +9,7 @@ const MyReviewsCard = ({ myReview, handleDeleteReview, handleUpdateReview }) => 
     const [myReviewService, setMyReviewService] = useState([]);
     const { name, img } = myReviewService;
 
-
+    // fetching service data based the which services user gave reviews to
     useEffect(() => {
         fetch(`https://sean-tucker-server.vercel.app/services/${serviceId}`)
             .then(res => res.json())
@@ -26,6 +26,9 @@ const MyReviewsCard = ({ myReview, handleDeleteReview, handleUpdateReview }) => 
                         <div>
                             <h2 className="text-2xl font-semibold pr-5">Review of: <span className='text-yellow-800'>{name}</span></h2>
                         </div>
+
+                        {/* This section handles the review delete and review update option */}
+                        {/* For review update, modal has been used and the review _id has been passed on as modal id */}
                         <div className='flex pt-1'>
                             <button className='pb-1'><label htmlFor={_id}><GrDocumentUpdate className='h-6 w-6 mr-2 mt-1'></GrDocumentUpdate></label></button>
                             <input type="checkbox" id={_id} className="modal-toggle" />
