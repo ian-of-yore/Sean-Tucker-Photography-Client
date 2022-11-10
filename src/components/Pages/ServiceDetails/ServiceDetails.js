@@ -77,11 +77,13 @@ const ServiceDetails = () => {
 
             {/* This following code is for service details section*/}
             <div className='mt-10 w-11/12 mx-auto'>
-                <div className="card card-side bg-base-100 shadow-xl">
-                    <figure><img src={img} alt="Movie" style={{ width: "60vw", height: "70vh" }} /></figure>
-                    <div className="card-body" style={{ width: "40vw" }}>
+                <div className="bg-base-100 shadow-xl grid md:grid-cols-12">
+                    <div className='md:col-span-7'>
+                        <figure><img src={img} alt="Movie" style={{ width: "100%", height: "70vh" }} /></figure>
+                    </div>
+                    <div className="md:col-span-5 card-body" style={{ width: "100%" }}>
                         <h2 className="card-title text-3xl">{name}</h2>
-                        <p>{description}</p>
+                        <p className='sm:mb-5'>{description}</p>
                         <div className="card-actions justify-end">
                             <button className="bg-gray-800 text-white px-5 py-3 rounded-xl hover:bg-gray-900">Join <span className='text-yellow-500'>{learners}</span> Aspiring Photographers today! for <span className='text-orange-600'>${price}</span></button>
                         </div>
@@ -90,8 +92,8 @@ const ServiceDetails = () => {
             </div>
 
             {/* The Following code is for the review section */}
-            <div className='my-20 grid grid-cols-6 w-11/12 mx-auto'>
-                <div className='col-span-4 pr-10'>
+            <div className='my-20 grid md:grid-cols-6 w-11/12 mx-auto'>
+                <div className='md:col-span-4 pr-10'>
                     {
                         reviews.map(review => <ReviewCard
                             key={review._id}
@@ -100,7 +102,7 @@ const ServiceDetails = () => {
                     }
                 </div>
 
-                <div className='text-center  col-span-2 shadow-xl p-3'>
+                <div className='text-center  md:col-span-2 shadow-xl p-3'>
                     {
                         user?.email ?
                             <form onSubmit={handleReviewSubmit} className='w-full'>

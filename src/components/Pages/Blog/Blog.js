@@ -5,7 +5,7 @@ const Blog = () => {
     useTitle('Blog');
 
     return (
-        <div className='w-1/2 mx-auto mt-10' style={{ height: "78.3vh" }}>
+        <div className='sm:w-2/3 md:w-1/2 mx-auto mt-10' style={{ height: "78.3vh" }}>
             <h3 className='my-5 text-3xl text-center font-semibold'>Here are some of the Frequently Asked Questions (FAQ) about the MERN stack web development</h3>
             <div className="collapse">
                 <input type="checkbox" />
