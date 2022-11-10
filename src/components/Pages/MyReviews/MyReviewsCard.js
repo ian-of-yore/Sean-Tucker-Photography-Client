@@ -20,8 +20,8 @@ const MyReviewsCard = ({ myReview, handleDeleteReview, handleUpdateReview }) => 
 
     return (
         <div>
-            <div className="card card-side grid grid-cols-6 bg-base-100 shadow-xl w-10/12 mx-auto mb-5">
-                <div className="card-body col-span-4">
+            <div className="card card-side grid md:grid-cols-6 bg-base-100 shadow-xl w-10/12 mx-auto mb-5">
+                <div className="card-body md:col-span-4 md:order-first sm:order-last">
                     <div className='flex justify-between items-start'>
                         <div>
                             <h2 className="text-2xl font-semibold pr-5">Review of: <span className='text-yellow-800'>{name}</span></h2>
@@ -46,7 +46,7 @@ const MyReviewsCard = ({ myReview, handleDeleteReview, handleUpdateReview }) => 
                     <h2 className="card-title text-xl   ">by <span className='text-orange-700'>"{userName}"</span><span className='text-base'>({user?.email})</span></h2>
                     <p className='pr-3'>Description: {reviewDetails}</p>
                 </div>
-                <div className='col-span-2'>
+                <div className='md:col-span-2 md:order-last sm:order-first'>
                     <figure><img src={img} alt="Movie" /></figure>
                 </div>
             </div>
