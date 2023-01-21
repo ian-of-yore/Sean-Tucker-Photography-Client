@@ -55,26 +55,25 @@ const SignIn = () => {
 
 
     return (
-        <div>
+        <div className="hero min-h-screen bg-base-200">
             {
                 loading === true && spinner === true ?
                     <div className='flex justify-center items-center h-screen'><button className="btn loading">loading</button></div>
                     :
-                    <div className="hero bg-base-200" style={{ minHeight: "83.7vh" }}>
-                        <div className="hero-content flex-col md:flex-row-reverse w-full md:w-10/12 md:mx-auto">
+                    <div className="hero-content flex-col sm:flex-row-reverse">
+                        <div className='hidden md:block md:w-72 lg:w-96'>
+                            <img src={signInImg} alt="" className='rounded-lg md:h-[400px] lg:h-[500px] w-full' />
+                        </div>
 
-                            <div className="flex justify-center md:w-1/3 md:ml-10">
-                                <img src={signInImg} alt="" className='rounded-lg' style={{ height: "70vh", width: "60vw" }} />
-                            </div>
-
-                            <div className="card flex justify-center w-2/3 px-10 md:w-1/3 md:px-10 shadow-2xl bg-base-100 pt-16" style={{ height: "70vh" }}>
-                                <h3 className='text-center text-3xl font-semibold mt-4'>Sign In</h3>
+                        <div className='w-80 md:w-72 lg:w-96'>
+                            <div className="card flex justify-center shadow-2xl rounded-lg bg-gray-300 p-7 md:h-[400px] lg:h-[500px]">
+                                <h3 className='text-center text-3xl font-semibold '>Sign In</h3>
                                 <form onSubmit={handleSubmit}>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Email</span>
                                         </label>
-                                        <input type="text" placeholder="email" name='email' className="input input-bordered" />
+                                        <input type="email" placeholder="email" name='email' className="input input-bordered" />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
@@ -86,11 +85,12 @@ const SignIn = () => {
                                             <p className='text-end'><small>New here? <Link to='/register'><span className='underline'>Sign Up</span></Link></small></p>
                                         </div>
                                     </div>
-                                    <button className='btn btn-sm w-full mt-4 border-black bg-white text-black hover:bg-blue-800 hover:text-white hover:border-0' type="submit">Sign In</button>
+                                    <button className='btn btn-sm w-full mt-4 border-black bg-white text-black hover:bg-blue-800 hover:text-white hover:border-0' type="submit">Sign Up</button>
                                 </form>
                                 <button onClick={handleGoogleSignIn} className='btn btn-sm btn-outline mt-4'>Continue With Google <FcGoogle className='ml-2 h-5 w-5'></FcGoogle></button>
                             </div>
                         </div>
+
                     </div>
             }
         </div>
