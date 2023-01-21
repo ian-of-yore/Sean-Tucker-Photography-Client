@@ -12,17 +12,26 @@ const Banner = () => {
 
     return (
         <div className='my-10'>
-            <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 w-11/12 mx-auto'>
+            <div className='flex justify-center'>
                 {
-                    services.map(service => <BannerItems
-                        key={service._id}
-                        service={service}
-                    ></BannerItems>)
+                    services.length ? '' : <button className="btn loading bg-black">loading</button>
                 }
             </div>
-            <div className='flex justify-center'>
-                <Link to='/services'><button className="btn btn-outline btn-wide">See More</button></Link>
-            </div>
+            {
+                services.length && <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 w-11/12 mx-auto'>
+                    {
+                        services.map(service => <BannerItems
+                            key={service._id}
+                            service={service}
+                        ></BannerItems>)
+                    }
+                </div>
+            }
+            {
+                services.length && <div className='flex justify-center'>
+                    <Link to='/services'><button className="btn btn-outline btn-wide">See More</button></Link>
+                </div>
+            }
         </div>
     );
 };

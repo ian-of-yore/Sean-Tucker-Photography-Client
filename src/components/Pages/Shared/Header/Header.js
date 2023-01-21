@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <div className='bg-neutral text-neutral-content'>
-            <div className="navbar px-12">
+            <div className="navbar px-0 md:px-6 lg:px-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -35,7 +35,7 @@ const Header = () => {
                             }
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl pl-4">
+                    <Link to='/' className="btn btn-ghost normal-case text-xl pl-0 md:pl-4">
                         Sean Tucker Photography
                     </Link>
                 </div>
@@ -45,7 +45,7 @@ const Header = () => {
                         <li><Link to='/blog' className='font-semibold text-lg'>Blog</Link></li>
                     </ul>
                 </div>
-                <div className="navbar-end sm:hidden lg:flex lg:justify-end">
+                <div className="navbar-end hidden lg:flex lg:justify-end">
                     {
                         user?.email ?
                             <div>

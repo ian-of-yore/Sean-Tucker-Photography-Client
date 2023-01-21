@@ -75,6 +75,13 @@ const ServiceDetails = () => {
                 />
             </div>
 
+            {/* The following code is for showing laoder while data fetching */}
+            <div className='flex justify-center'>
+                {
+                    setReviews.length ? '' : <button className="btn loading bg-black">loading</button>
+                }
+            </div>
+
             {/* This following code is for service details section*/}
             <div className='mt-10 w-11/12 mx-auto'>
                 <div className="bg-base-100 shadow-xl grid md:grid-cols-12">
