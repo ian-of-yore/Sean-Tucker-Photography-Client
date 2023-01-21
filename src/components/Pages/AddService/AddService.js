@@ -47,7 +47,7 @@ const AddService = () => {
     }
 
     return (
-        <div style={{ height: "77.3vh" }}>
+        <div className='h-screen'>
             {/* The following code if for styling toast */}
             <div>
                 <Toaster
@@ -61,8 +61,8 @@ const AddService = () => {
                     }}
                 />
             </div>
-            <form onSubmit={handleAddService} className='w-2/4 mx-auto'>
-                <h3 className='text-3xl font-semibold text-center my-10'>Add a new service that Sean Tucker provides</h3>
+            <form onSubmit={handleAddService} className='w-2/3 lg:w-1/2 mx-auto'>
+                <h3 className='text-xl md:text-3xl font-semibold text-center my-10'>Add a new service that Sean Tucker provides</h3>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 mb-10'>
                     <input type="text" name='name' placeholder="Service Name" className="input w-full max-w-xs" required />
                     <input type="text" name='photoURL' placeholder="Service PhotoURL" className="input w-full max-w-xs" required />
@@ -70,7 +70,7 @@ const AddService = () => {
                     <input type="text" name='learners' placeholder="Total Students" className="input w-full max-w-xs" required />
                 </div>
                 <textarea name='description' className="textarea h-24 border w-full border-black block mb-8" placeholder="Service Details" required></textarea>
-                <input type="submit" className='btn btn-ghost btn-sm border-0 w-full' value="Add Service" />
+                <input type="submit" className='btn btn-outline bg-gray-900 text-white btn-sm border-0 w-full' value="Add Service" />
             </form>
         </div>
     );

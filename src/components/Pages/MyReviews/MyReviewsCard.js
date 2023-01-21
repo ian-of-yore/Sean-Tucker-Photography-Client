@@ -19,38 +19,26 @@ const MyReviewsCard = ({ myReview, handleDeleteReview, handleUpdateReview }) => 
 
 
     return (
-        <div>
-            <div className="card card-side grid md:grid-cols-6 bg-base-100 shadow-xl w-10/12 mx-auto mb-5">
-                <div className="card-body md:col-span-4 md:order-first sm:order-last">
-                    <div className='flex justify-between items-start'>
-                        <div>
-                            <h2 className="text-2xl font-semibold pr-5">Review of: <span className='text-yellow-800'>{name}</span></h2>
-                        </div>
+        <div className="card card-compact bg-base-100 shadow-xl">
+            <figure className='h-56'><img src={img} alt="Shoes" className='h-full w-full' /></figure>
+            <div className="card-body h-72">
+                <h2 className="text-xl font-serif"><span className='text-orange-600 underline'>Review of:</span> {name}</h2>
+                <p className='overflow-scroll '><span className='text-orange-600 underline'>Description:</span> {reviewDetails}</p>
+                <div className="flex justify-between mt-3">
+                    <button className='pb-1'><label htmlFor={_id}><GrDocumentUpdate className='h-6 w-6 mr-2 mt-1'></GrDocumentUpdate></label></button>
+                    <input type="checkbox" id={_id} className="modal-toggle" />
+                    <div className="modal">
 
-                        {/* This section handles the review delete and review update option */}
-                        {/* For review update, modal has been used and the review _id has been passed on as modal id */}
-                        <div className='flex pt-1'>
-                            <button className='pb-1'><label htmlFor={_id}><GrDocumentUpdate className='h-6 w-6 mr-2 mt-1'></GrDocumentUpdate></label></button>
-                            <input type="checkbox" id={_id} className="modal-toggle" />
-                            <div className="modal">
-
-                                <form onSubmit={(event) => handleUpdateReview(event, _id)} className='w-1/3 mx-auto shadow-xl bg-gray-600 p-8'>
-                                    <h3 className='text-3xl font-semibold text-center mb-7 text-white'>Update Review</h3>
-                                    <textarea name='reviewDetails' className="textarea h-36 border w-full border-black block my-4" placeholder="Update your review" required></textarea>
-                                    <div className="modal-action">
-                                        <button type="submit"><label htmlFor={_id} className="btn btn-ghost text-white">Update</label></button>
-                                    </div>
-                                </form>
-
+                        <form onSubmit={(event) => handleUpdateReview(event, _id)} className='w-1/3 mx-auto shadow-xl bg-gray-600 p-8'>
+                            <h3 className='text-3xl font-semibold text-center mb-7 text-white'>Update Review</h3>
+                            <textarea name='reviewDetails' className="textarea h-36 border w-full border-black block my-4" placeholder="Update your review" required></textarea>
+                            <div className="modal-action">
+                                <button type="submit"><label htmlFor={_id} className="btn btn-ghost text-white">Update</label></button>
                             </div>
-                            <button onClick={() => handleDeleteReview(_id)}><RiDeleteBin3Line className='h-8 w-7'></RiDeleteBin3Line></button>
-                        </div>
+                        </form>
+
                     </div>
-                    <h2 className="card-title text-xl   ">by <span className='text-orange-700'>"{userName}"</span><span className='text-base'>({user?.email})</span></h2>
-                    <p className='pr-3'>Description: {reviewDetails}</p>
-                </div>
-                <div className='md:col-span-2 md:order-last sm:order-first'>
-                    <figure><img src={img} alt="Movie" /></figure>
+                    <button onClick={() => handleDeleteReview(_id)}><RiDeleteBin3Line className='h-8 w-7'></RiDeleteBin3Line></button>
                 </div>
             </div>
         </div>

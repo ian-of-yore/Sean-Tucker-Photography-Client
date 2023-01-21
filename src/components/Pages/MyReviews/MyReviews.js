@@ -82,44 +82,42 @@ const MyReviews = () => {
 
 
     return (
-        <div>
-            {
-                spinner === true ?
-                    <div className='flex justify-center items-center h-screen'><button className="btn btn-square loading"></button></div>
-                    :
-                    <div style={{ minHeight: "78.3vh" }}>
-                        <div>
-                            <Toaster
-                                toastOptions={{
-                                    success: {
-                                        style: {
-                                            background: 'green',
-                                            color: 'white',
-                                        },
-                                    }
-                                }}
-                            />
-                        </div>
-                        <div className='mt-10'>
-                            {
-                                myReviews.length === 0 ?
-                                    <h3 className=' text-3xl font-semibold flex justify-center items-center' style={{ height: "77.3vh" }}>No reviews were added</h3>
-                                    :
-                                    <></>
-                            }
-                        </div>
-                        <div>
-                            {
-                                myReviews.map(myReview => <MyReviewsCard
-                                    key={myReview._id}
-                                    myReview={myReview}
-                                    handleDeleteReview={handleDeleteReview}
-                                    handleUpdateReview={handleUpdateReview}
-                                ></MyReviewsCard>)
-                            }
-                        </div>
-                    </div>
-            }
+        <div className='mb-10 min-h-screen w-11/12 mx-auto lg:w-10/12'>
+            <div className='flex justify-center'>
+                {
+                    spinner === true ? <button className="btn loading bg-black">loading</button> : ''
+                }
+            </div>
+            <div>
+                <Toaster
+                    toastOptions={{
+                        success: {
+                            style: {
+                                background: 'green',
+                                color: 'white',
+                            },
+                        }
+                    }}
+                />
+            </div>
+            <div className='mt-10'>
+                {
+                    myReviews.length === 0 ?
+                        <h3 className=' text-3xl font-semibold flex justify-center items-center'>No reviews were added</h3>
+                        :
+                        <></>
+                }
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+                {
+                    myReviews.map(myReview => <MyReviewsCard
+                        key={myReview._id}
+                        myReview={myReview}
+                        handleDeleteReview={handleDeleteReview}
+                        handleUpdateReview={handleUpdateReview}
+                    ></MyReviewsCard>)
+                }
+            </div>
         </div>
 
     );

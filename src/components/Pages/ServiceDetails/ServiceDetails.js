@@ -84,11 +84,11 @@ const ServiceDetails = () => {
 
             {/* This following code is for service details section*/}
             <div className='mt-10 w-11/12 mx-auto'>
-                <div className="bg-base-100 shadow-xl grid md:grid-cols-12">
-                    <div className='md:col-span-7'>
-                        <figure><img src={img} alt="Movie" style={{ width: "100%", height: "70vh" }} /></figure>
+                <div className="bg-base-100 shadow-xl grid lg:grid-cols-12">
+                    <div className='lg:col-span-7'>
+                        <figure><img src={img} alt="Movie" style={{ width: "100%", height: '100%' }} /></figure>
                     </div>
-                    <div className="md:col-span-5 card-body" style={{ width: "100%" }}>
+                    <div className="lg:col-span-5 card-body p-4 md:p-8" style={{ width: "100%" }}>
                         <h2 className="card-title text-3xl">{name}</h2>
                         <p className='sm:mb-5'>{description}</p>
                         <div className="card-actions justify-end">
@@ -100,7 +100,7 @@ const ServiceDetails = () => {
 
             {/* The Following code is for the review section */}
             <div className='my-20 grid md:grid-cols-6 w-11/12 mx-auto'>
-                <div className='md:col-span-4 pr-10'>
+                <div className='md:col-span-4 md:pr-10'>
                     {
                         reviews.map(review => <ReviewCard
                             key={review._id}
@@ -109,7 +109,7 @@ const ServiceDetails = () => {
                     }
                 </div>
 
-                <div className='text-center  md:col-span-2 shadow-xl p-3'>
+                <div className='text-center  md:col-span-2 shadow-xl p-3 h-96'>
                     {
                         user?.email ?
                             <form onSubmit={handleReviewSubmit} className='w-full'>
