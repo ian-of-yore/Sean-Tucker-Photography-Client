@@ -3,6 +3,7 @@ import useTitle from '../../../hooks/useTitle';
 import About from './About/About';
 import Banner from './Banner/Banner';
 import Slider from './Slider/Slider';
+import StaticReviews from './StaticReviews/StaticReviews';
 import Works from './Works/Works';
 
 
@@ -14,6 +15,7 @@ const Homepage = () => {
             <Slider></Slider>
             <About></About>
             <Works></Works>
+            <StaticReviews></StaticReviews>
         </div>
     );
 };
