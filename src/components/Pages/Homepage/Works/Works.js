@@ -11,7 +11,7 @@ import street06 from '../../../../assets/street06.jpg';
 const Works = () => {
     return (
         <div>
-            <p className='text-center text-3xl mt-10 font-mono'>Some of Sean's best works!</p>
+            <p className='text-center text-3xl mt-20 font-mono'>Some of Sean's best works!</p>
             <div className='w-11/12 mx-auto lg:w-10/12 lg:mx-auto text-xl font-serif my-6 grid grid-cols-2 md:grid-cols-4 gap-5'>
                 <p className='bg-gray-300 text-black text-center py-2'><a href="https://www.seantucker.photography/" target="_blank" rel="noopener noreferrer">Portraits</a></p>
                 <p className='bg-gray-300 text-black text-center py-2'><a href='https://www.seantucker.photography/street' target="_blank" rel="noopener noreferrer" >Streets</a></p>
