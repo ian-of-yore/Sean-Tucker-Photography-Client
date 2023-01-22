@@ -23,7 +23,7 @@ const About = () => {
         // </p>
         //     </div>
         // </div>
-        <div className='w-11/12 lg:w-10/12 mx-auto mt-16'>
+        <div className='w-11/12 mx-auto lg:w-10/12 mt-16 bg-gray-700 text-white'>
             <div className="card md:card-side shadow-xl">
                 <figure className='md:w-1/5 w-full'><img src={img} alt="Album" className='h-[400px] md:h-[240px] lg:h-[400px] md:w-full' /></figure>
                 <div className="card-body p-7 md:w-4/5 w-full">

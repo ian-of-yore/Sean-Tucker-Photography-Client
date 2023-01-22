@@ -11,76 +11,76 @@ import landscape from '../../../../assets/types/landscape.jpg';
 
 const Slider = () => {
     return (
-        <div className='w-11/12 lg:w-10/12 mx-auto my-10'>
+        <div className='w-11/12 lg:w-10/12 mx-auto mb-10'>
             <div>
                 <h3 className='text-center text-3xl font-serif mb-5'>Explore some genres of photography as you start your own journey!</h3>
             </div>
-            <div className="carousel h-[300px] md:h-[500px] lg:h-[600px]">
+            <div className="carousel h-[300px] md:h-[500px] lg:h-[700px]">
                 <div id="item1" className="carousel-item w-full">
-                    <div class="relative hero">
+                    <div className="relative hero">
                         <img src={journalism} alt='' className="shadow-2xl w-full h-full" />
-                        <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
-                            <h3 class="text-xl text-white font-bold text-center">
+                        <div className="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
+                            <h3 className="text-xl text-white font-bold text-center">
                                 Photo Journalism</h3>
                         </div>
                     </div>
                 </div>
 
                 <div id="item2" className="carousel-item w-full">
-                    <div class="relative hero">
+                    <div className="relative hero">
                         <img src={sports} alt='' className="shadow-2xl w-full h-full" />
-                        <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
-                            <h3 class="text-xl text-white font-bold text-center">
+                        <div className="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
+                            <h3 className="text-xl text-white font-bold text-center">
                                 Sports Photography</h3>
                         </div>
                     </div>
                 </div>
 
                 <div id="item3" className="carousel-item w-full">
-                    <div class="relative hero">
+                    <div className="relative hero">
                         <img src={portrait} alt='' className="shadow-2xl w-full h-full" />
-                        <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
-                            <h3 class="text-xl text-white font-bold text-center">
+                        <div className="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
+                            <h3 className="text-xl text-white font-bold text-center">
                                 Portrait Photography</h3>
                         </div>
                     </div>
                 </div>
 
                 <div id="item4" className="carousel-item w-full">
-                    <div class="relative hero">
+                    <div className="relative hero">
                         <img src={fashion} alt='' className="shadow-2xl w-full h-full" />
-                        <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
-                            <h3 class="text-xl text-white font-bold text-center">
+                        <div className="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
+                            <h3 className="text-xl text-white font-bold text-center">
                                 Fashion Photography</h3>
                         </div>
                     </div>
                 </div>
 
                 <div id="item5" className="carousel-item w-full">
-                    <div class="relative hero">
+                    <div className="relative hero">
                         <img src={architecture} alt='' className="shadow-2xl w-full h-full" />
-                        <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
-                            <h3 class="text-xl text-white font-bold text-center">
+                        <div className="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
+                            <h3 className="text-xl text-white font-bold text-center">
                                 Architectural Photography</h3>
                         </div>
                     </div>
                 </div>
 
                 <div id="item6" className="carousel-item w-full">
-                    <div class="relative hero">
+                    <div className="relative hero">
                         <img src={landscape} alt='' className="shadow-2xl w-full h-full" />
-                        <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
-                            <h3 class="text-xl text-white font-bold text-center">
+                        <div className="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
+                            <h3 className="text-xl text-white font-bold text-center">
                                 Landscape Photography</h3>
                         </div>
                     </div>
                 </div>
 
                 <div id="item7" className="carousel-item w-full">
-                    <div class="relative hero">
+                    <div className="relative hero">
                         <img src={street} alt='' className="shadow-2xl w-full h-full" />
-                        <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
-                            <h3 class="text-xl text-white font-bold text-center">
+                        <div className="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
+                            <h3 className="text-xl text-white font-bold text-center">
                                 Street Photography</h3>
                         </div>
                     </div>

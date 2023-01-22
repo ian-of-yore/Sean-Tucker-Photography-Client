@@ -13,7 +13,7 @@ const Header = () => {
 
 
     return (
-        <div className='bg-neutral text-neutral-content'>
+        <div className='bg-gray-800 text-neutral-content'>
             <div className="navbar px-0 md:px-6 lg:px-10">
                 <div className="navbar-start">
                     <div className="dropdown">

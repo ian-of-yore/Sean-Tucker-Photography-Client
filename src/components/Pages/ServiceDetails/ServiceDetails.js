@@ -88,7 +88,7 @@ const ServiceDetails = () => {
                     <div className='lg:col-span-7'>
                         <figure><img src={img} alt="Movie" style={{ width: "100%", height: '100%' }} /></figure>
                     </div>
-                    <div className="lg:col-span-5 card-body p-4 md:p-8" style={{ width: "100%" }}>
+                    <div className="lg:col-span-5 card-body p-4 md:p-8 bg-slate-700 text-white" style={{ width: "100%" }}>
                         <h2 className="card-title text-3xl">{name}</h2>
                         <p className='sm:mb-5'>{description}</p>
                         <div className="card-actions justify-end">
@@ -109,7 +109,7 @@ const ServiceDetails = () => {
                     }
                 </div>
 
-                <div className='text-center  md:col-span-2 shadow-xl p-3 h-96'>
+                <div className='text-center  md:col-span-2 shadow-xl p-3 h-96 bg-slate-300 rounded-2xl'>
                     {
                         user?.email ?
                             <form onSubmit={handleReviewSubmit} className='w-full'>

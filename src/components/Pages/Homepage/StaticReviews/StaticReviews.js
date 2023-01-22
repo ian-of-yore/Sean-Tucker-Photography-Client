@@ -34,7 +34,7 @@ const StaticReviews = () => {
     };
 
     return (
-        <div className='w-11/12 mx-auto lg:w-10/12 lg:mx-auto mb-60 mt-20'>
+        <div className='w-11/12 mx-auto lg:w-10/12 lg:mx-auto my-20'>
             <h1 className='text-2xl md:text-4xl font-sans font-semibold mb-5 text-center'>Check out what some of Sean's learners have to say!</h1>
             <div className='xs:px-10 sm:px-20 md:px-0'>
                 <Carousel
@@ -50,7 +50,7 @@ const StaticReviews = () => {
                 >
                     {
                         staticReviews.map(reviews =>
-                            <div className="card h-72  shadow-xl mx-4 border-t-4 border-indigo-500 top-10">
+                            <div key={reviews.id} className="card h-72  shadow-xl mx-4 border-t-4 border-indigo-500 top-10">
                                 <div className="avatar flex-col justify-center items-center -top-10">
                                     <div className="w-20 rounded-full">
                                         <img src={reviews.img} alt='' />

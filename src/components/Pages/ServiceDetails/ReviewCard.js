@@ -4,7 +4,7 @@ const ReviewCard = ({ review }) => {
     const { userName, userPhoto, reviewDetails } = review;
 
     return (
-        <div className='mb-5 p-3 grid lg:grid-cols-10 shadow-lg'>
+        <div className='mb-5 p-3 grid lg:grid-cols-10 shadow-lg bg-slate-300'>
             <div className="avatar sm:col-span-3 md:col-span-1" style={{ height: '10vh', width: '100%' }}>
                 <div className="rounded-xl">
                     <img src={userPhoto} alt='' />
