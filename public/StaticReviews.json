@@ -1,41 +1,35 @@
 [
     {
-        "id": "1",
         "img": "https://images.unsplash.com/photo-1588516903720-8ceb67f9ef84?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=444&q=80",
         "name": "Ellen R.",
         "title": "Editorial Photographer",
         "description": "I've been following you for a while now and although I have yet to achieve a lot to call myself a professional, I can still tell when someone's work is really good. With photography like with anything else, you never stop learning. I enjoy watching you grow as an artist. It's nice to know and see that someone out there is dealing with similar issues as I. I've got to say that your work has improved tremendously. I really like the images you show at the end of this video. Well done!"
     },
     {
-        "id": "2",
         "img": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
         "name": "Onyeka Jr.",
         "title": "Product Photographer",
         "description": "The minimalist approach is really inspiring. If you just have a small camera with one lens (fixed or otherwise), you never have to obsess over the equipment and can just concentrate 100% on the photography. Whilst I like the idea of a discrete point and shoot, I personally do love being able to select my own lenses that become a part of my style. Last year I bought an A7III, mainly so I could pair it with a Voigtlander f1.2 40mm. Of course this setup isn't pocketable or as discrete but I love the rendering and colours I get from the lens."
     },
     {
-        "id": "3",
         "img": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "name": "Alberto",
         "title": "Sports Photographer",
         "description": "Sean, your work with shadows photography is unequalled!  Absolutely stunning.  Watching this video is encouraging me to rethink my photography pursuits.  I was saving $ for good glass for my older Canon, then began looking at the Sony A6500.  As you aptly stated, taking more pics is the primary bridge to become better faster---so I paused your video and read the stats on the Sony RX100II & Canon Powershot G9X Mark II (silver).  My brain will be on overload for a couple of days.  Lastly, your locations for street photography are amazing---the suspicious culture here in the US might not be so welcoming unless you're in a tourist location.  Be well."
     },
     {
-        "id": "4",
         "img": "https://images.unsplash.com/photo-1481214110143-ed630356e1bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
         "name": "Marlies",
         "title": "Street Photographer",
         "description": "I don't do any portraiture ….but I found this course absolutely fascinating to experience…with a truly stunning result ! It was almost like watching a meticulous forensic scientist examining a scene for clues. It really made me appreciate how much can go into great photographic art. ( for what its worth Sean, I preferred your result!) couple of ideas..Che Guevara by Rene Burri (1963) , Thomas Hoepker Muhammad Ali's fist (1966) both seen in “Magnum contact sheets”.."
     },
     {
-        "id": "5",
         "img": "https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "name": "Alexander",
         "title": "Wedding Photographer",
         "description": "Simply Stunning, Nay, Awe Inspiring. The first video of yours I ever watched was the 1 light setup in a small space, Wow, the portraits I have taken of my Wife since then have evolved immensely with your help. Thank You for that, but moreover Thank you for this, Breaking down the original as you did, and recreating it to your taste is incredibly clever. Hats off to your model, Please give her our best. Be well. Looking forward to your next output."
     },
     {
-        "id": "6",
         "img": "https://images.unsplash.com/photo-1508341591423-4347099e1f19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
         "name": "Eric",
         "title": "Landscape Photographer",
