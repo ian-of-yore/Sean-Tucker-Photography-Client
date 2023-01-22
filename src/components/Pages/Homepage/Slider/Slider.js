@@ -15,7 +15,7 @@ const Slider = () => {
             <div>
                 <h3 className='text-center text-3xl font-serif mb-5'>Explore some genres of photography as you start your own journey!</h3>
             </div>
-            <div className="carousel h-[300px] md:h-[500px] lg:h-[700px]">
+            <div className="carousel h-[300px] md:h-[500px] lg:h-[700px] rounded-lg">
                 <div id="item1" className="carousel-item w-full">
                     <div className="relative hero">
                         <img src={journalism} alt='' className="shadow-2xl w-full h-full" />
