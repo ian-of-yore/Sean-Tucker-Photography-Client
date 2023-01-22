@@ -11,7 +11,7 @@ import landscape from '../../../../assets/types/landscape.jpg';
 
 const Slider = () => {
     return (
-        <div className='w-11/12 lg:w-10/12 mx-auto mb-10'>
+        <div className='w-11/12 lg:w-10/12 mx-auto mb-10 mt-20'>
             <div>
                 <h3 className='text-center text-3xl font-serif mb-5'>Explore some genres of photography as you start your own journey!</h3>
             </div>

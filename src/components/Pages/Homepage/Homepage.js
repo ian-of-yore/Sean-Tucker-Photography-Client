@@ -14,9 +14,9 @@ const Homepage = () => {
     return (
         <div className='mb-10'>
             <LimitedOffer></LimitedOffer>
-            <Slider></Slider>
             <About></About>
             <Works></Works>
+            <Slider></Slider>
             <Banner></Banner>
             <StaticReviews></StaticReviews>
             <Subscribe></Subscribe>
