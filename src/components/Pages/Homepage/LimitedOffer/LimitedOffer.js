@@ -12,7 +12,7 @@ const LimitedOffer = () => {
             <div className="hero w-11/12 mx-auto lg:w-10/12 border-b-4 lg:border-b-0 pb-4 lg:pb-0">
                 <div className="hero-content flex-col lg:flex-row w-full p-0">
                     <div className=''>
-                        <video src={video} autoPlay muted loop className='rounded-lg'></video>
+                        <video src={video} autoPlay muted loop controls className='rounded-lg'></video>
                     </div>
                     <div className=''>
                         <h4 className='text-base md:text-xl font-mono mb-3'>Get 20% off before the flash sale ends!</h4>

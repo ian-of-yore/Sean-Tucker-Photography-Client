@@ -33,7 +33,7 @@ const StaticReviews = () => {
         }
     };
 
-    console.log(staticReviews)
+    // console.log(staticReviews)
 
     return (
         <div className='w-11/12 mx-auto lg:w-10/12 lg:mx-auto my-20'>

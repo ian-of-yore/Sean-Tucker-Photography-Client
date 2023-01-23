@@ -20,14 +20,17 @@ const Header = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 shadow bg-gray-700 rounded-box w-32">
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 shadow bg-gray-700 rounded-r-lg w-32">
                             <li><Link to='/services' className='btn btn-sm mb-1'>Courses</Link></li>
-                            <li><Link to='/blog' className='btn btn-sm mb-1'>Blog</Link></li>
                             <Link to='/myreviews'><button className='btn btn-sm w-full mb-1'>My Reviews</button></Link>
-                            <Link to='/addservice'><button className='btn btn-sm w-full mb-1'>Add Service</button></Link>
+                            <li><Link to='/blog' className='btn btn-sm mb-1'>Blog</Link></li>
+                            <li><Link to='/aboutUs' className='btn btn-sm mb-1'>About Us</Link></li>
                             {
                                 user?.email ?
-                                    <button onClick={handleUserLogOut} className='btn btn-sm w-full mb-1'>Sign Out</button>
+                                    <>
+                                        <Link to='/addservice'><button className='btn btn-sm w-full mb-1'>Add Service</button></Link>
+                                        <button onClick={handleUserLogOut} className='btn btn-sm w-full mb-1'>Sign Out</button>
+                                    </>
                                     :
                                     <Link to='/signin' className='btn btn-sm w-full mb-1'>Sign In</Link>
                             }
@@ -44,12 +47,15 @@ const Header = () => {
                 </div>
                 <div className="navbar-end hidden lg:flex lg:justify-end">
                     <Link to='/services' className='font-semibold text-lg'><button className='btn btn-ghost'>Courses</button></Link>
-                    <Link to='/blog' className='font-semibold text-lg'><button className='btn btn-ghost'>Blog</button></Link>
                     <Link to='/myreviews'><button className='btn btn-ghost'>My Reviews</button></Link>
-                    <Link to='/addservice'><button className='btn btn-ghost'>Add Service</button></Link>
+                    <Link to='/blog' className='font-semibold text-lg'><button className='btn btn-ghost'>Blog</button></Link>
+                    <Link to='/aboutUs' className='font-semibold text-lg'><button className='btn btn-ghost'>About Us</button></Link>
                     {
                         user?.email ?
-                            <button onClick={handleUserLogOut} className='btn btn-ghost'>Sign Out</button>
+                            <>
+                                <Link to='/addservice' className='font-semibold text-lg'><button className='btn btn-ghost'>Add Service</button></Link>
+                                <button onClick={handleUserLogOut} className='btn btn-ghost'>Sign Out</button>
+                            </>
                             :
                             <Link to='/signin' className='btn btn-ghost'>Sign In</Link>
                     }
