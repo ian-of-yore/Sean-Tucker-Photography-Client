@@ -10,9 +10,9 @@ import { CiLocationOn } from "react-icons/ci";
 
 const Footer = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-12'>
-            <div className='md:col-span-4 bg-gray-900 text-white border-b-4 md:border-r-4 border-gray-800'>
-                <div className='mt-10 mb-5 md:mb-0 ml-7 sm:ml-20 md:ml-0'>
+        <div className='grid grid-cols-1 md:grid-cols-12 xl:grid-cols-12'>
+            <div className='md:col-span-4 xl:col-span-5 bg-gray-900 text-white border-b-4 md:border-r-4 border-gray-800'>
+                <div className='mt-10 mb-5 md:mb-0 ml-7 sm:ml-20 md:ml-0 xl:ml-20'>
                     <div className='flex justify-start md:ml-6'>
                         <div className='lg:flex justify-center items-end lg:mx-0'>
                             <img src={logo} alt="" className='w-14 h-14 rounded-lg mr-2' />
@@ -36,7 +36,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='p-10 bg-gray-900 text-white md:col-span-8'>
+            <div className='p-10 bg-gray-900 text-white md:col-span-8 xl:col-span-7'>
                 <footer className="footer flex justify-around">
                     <div>
                         <span className="text-lg font-semibold text-white">Services</span>
