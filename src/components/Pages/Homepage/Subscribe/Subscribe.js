@@ -25,7 +25,7 @@ const Subscribe = () => {
                         <input type="text" placeholder="Last Name" name='lastName' className="input input-bordered w-full max-w-xs mb-3" />
                     </div>
                     <div>
-                        <input type="email" placeholder="Email Address" name='email' className="input input-bordered w-full max-w-xs mb-3" />
+                        <input type="email" placeholder="Email Address" name='email' className="input input-bordered w-full max-w-xs mb-3" required />
                     </div>
                     <button className='btn w-full max-w-xs md:btn-wide md:mt-4' type="submit">Keep Me Updated</button>
                 </form>
