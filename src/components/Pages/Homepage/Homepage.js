@@ -3,6 +3,7 @@ import useTitle from '../../../hooks/useTitle';
 import About from './About/About';
 import Banner from './Banner/Banner';
 import LimitedOffer from './LimitedOffer/LimitedOffer';
+import Pricing from './Pricing/Pricing';
 import Slider from './Slider/Slider';
 import StaticReviews from './StaticReviews/StaticReviews';
 import Subscribe from './Subscribe/Subscribe';
@@ -19,6 +20,7 @@ const Homepage = () => {
             <Slider></Slider>
             <Banner></Banner>
             <StaticReviews></StaticReviews>
+            <Pricing></Pricing>
             <Subscribe></Subscribe>
         </div>
     );
